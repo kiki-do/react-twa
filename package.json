@@ -1,0 +1,43 @@
+{
+	"name": "react-twa",
+	"version": "0.0.0",
+	"description": "Сonvenient powerful library",
+	"author": {
+		"name": "kiki-do",
+		"url": "https://github.com/kiki-do"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/kiki-do/react-twa",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kiki-do/react-twa.git",
+		"directory": "packages/core"
+	},
+	"bugs": "https://github.com/kiki-do/react-twa/issues",
+	"keywords": [
+		"react",
+		"telegram",
+		"telegram-web-app",
+		"twa",
+		"telegram mini apps"
+	],
+	"scripts": {
+		"lint": "pnpm --recursive lint",
+		"format": "prettier --write .",
+		"lint-staged": "pnpm --recursive run lint-staged",
+		"prepare": "husky",
+		"commit": "commit"
+	},
+	"packageManager": "pnpm@10.13.1",
+	"devDependencies": {
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"@commitlint/prompt-cli": "^19.8.1",
+		"@types/node": "^24.1.0",
+		"commitlint": "^19.8.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.2",
+		"typescript": "^5.8.3",
+		"vite": "^7.0.5"
+	}
+}
