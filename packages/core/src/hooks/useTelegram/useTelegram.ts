@@ -1,3 +1,3 @@
 export const useTelegram = () => {
-  return;
+  return 'hiu';
 };
