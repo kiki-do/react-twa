@@ -1,23 +1,31 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "react-jsx",
-    "strict": true,
-    "moduleResolution": "bundler",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./src/*"]
+      "@react-twa/docs/*": ["../docs/src/*"],
+      "@/*": ["./src/*"],
     },
-    "outDir": "dist",
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "emitDeclarationOnly": false
+    "resolveJsonModule": true,
+    "types": ["vitest/globals", "@types/web-bluetooth", "@types/dom-speech-recognition"],
+    "allowJs": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "newLine": "lf",
+    "noEmit": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["dist", "node_modules"]
 }
