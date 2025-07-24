@@ -7,7 +7,7 @@ declare global {
 }
 
 export interface TelegramWebApp {
-  initData?: string;
+  initData: InitData;
   initDataUnsafe?: TelegramInitDataUnsafe;
   themeParams?: {
     bg_color?: string;
@@ -19,7 +19,7 @@ export interface TelegramWebApp {
   };
   isExpanded?: boolean;
   viewportHeight?: number;
-  ready?: () => void;
+  ready: () => void;
   expand?: () => void;
   close?: () => void;
   onEvent?: (eventType: string, eventHandler: () => void) => void;
@@ -31,19 +31,37 @@ export interface TelegramInitDataUnsafe {
    * @TODO Write all types
    */
   user?: TelegramUser;
-  chat?: unknown;
+  query_id?: string;
+  hash: string;
+  auth_date: number;
+}
+
+export interface InitData {
+  raw: string;
+  unsafe: {
+    user?: TelegramUser;
+    queryId?: string;
+    hash: string;
+    authDate: Date;
+  };
 }
 
 export interface TelegramUser {
-  /**
-   * @TODO Write all types
-   */
   id: number;
+  is_bot: Boolean;
+  first_name: string;
+  last_name: string;
+  username: string;
+  language_code: string;
+  is_premium: boolean;
+  added_to_attachment_menu: boolean;
+  allows_write_to_pm: boolean;
+  photo_url: string;
 }
 
 export interface WebAppInitResult {
   webApp?: TelegramWebApp;
   user?: TelegramUser;
   initData?: string;
-  initDataUnsafe?: TelegramWebApp["initDataUnsafe"];
+  initDataUnsafe?: TelegramWebApp['initDataUnsafe'];
 }

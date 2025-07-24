@@ -1,1 +1,1 @@
-export * from "./useTelegram/useTelegram";
+export * from './useInitData/useInitData';
